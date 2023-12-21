@@ -1,0 +1,77 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Light-pink: hsl(275, 100%, 97%);
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to bottom, var(--Dark-purple) 25%, var(--Light-pink) 25%, var(--Light-pink) 100%);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.accordion {
+    width: 50vw;
+    border: 1px solid;
+    margin: 4rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--White);
+}
+.title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.title h1 {
+    font-size: 3rem;
+
+}
+
+
+.question {
+    border-bottom: 2px solid var(--Light-pink);
+    padding-bottom: 1rem;
+}
+.question .head {
+    display: flex;
+    height: 60px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+}
+.question .head {
+    transition: .3s;
+
+}
+.question .head h4   {
+    cursor: pointer;
+
+}
+.question .head h4.active {
+    color: hsl(280.92deg 82.98% 53.92%);
+}
+.question p.answer {
+    color: var(--Grayish-purple);
+    font-weight: 500;
+    height: 0;
+    opacity: 0;
+    transition: .3s;
+}
+.question p.answer:hover {
+    color: var(--Dark-purple);
+}
+.question p.answer.clicked {
+    height: fit-content;
+    opacity: 1;
+}
+@media (max-width: 575px) {
+    .accordion {
+        width: 80vw;
+    }
+}
